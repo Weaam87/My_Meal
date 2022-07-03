@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Button Style for Next Button -->
+    <style name="Widget.Order.Button.Next" parent="">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:text">@string/next</item>
+    </style>
+
+    <!-- Button Style for Next Button -->
+    <style name="Widget.Order.Button.Cancel"
+        parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:text">@string/cancel</item>
+    </style>
+
+    <!-- TextView Style for Subtotal -->
+    <style name="Widget.MyMeal.TextView.Subtotal" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:textAppearance">?attr/textAppearanceSubtitle1</item>
+    </style>
+
+    <!-- TextView Style for Menu Item Info -->
+    <style name="Widget.MenuItem.TextView.Info" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">?attr/textAppearanceBody2</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="singleLine">false</item>
+        <item name="android:scrollHorizontally">false</item>
+        <item name="maxLines">5</item>
+    </style>
+
+    <!-- Divider style -->
+    <style name="Widget.MyMeal.Divider" parent="@style/Theme.MyMeal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">?attr/dividerHorizontal</item>
+        <item name="android:layout_marginTop">8dp</item>
+    </style>
+</resources>

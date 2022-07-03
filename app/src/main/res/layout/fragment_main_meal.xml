@@ -1,14 +1,215 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".ui.MainMeal">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="16dp">
+
+            <RadioGroup
+                android:id="@+id/main_meal_options"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RadioButton
+                    android:id="@+id/grilled_chicken"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Charcoal Grilled Chicken"
+                    android:textAppearance="?attr/textAppearanceBody1"
+                    tools:text="Charcoal Grilled Chicken" />
+
+
+                <TextView
+                    android:id="@+id/grilled_chicken_description"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:text="Seasoned half grilled chicken, spiced rice, yoghurt, green salad and spicy tomato sauce"
+                    tools:text="Entree 1 description" />
+
+                <TextView
+                    android:id="@+id/grilled_chicken_price"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:paddingTop="8dp"
+                    android:text="55 $"
+                    tools:text="$0.00" />
+
+                <View
+                    style="@style/Widget.MyMeal.Divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/grilled_chicken_description" />
+
+                <RadioButton
+                    android:id="@+id/biryani"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Biryani"
+                    android:textAppearance="?attr/textAppearanceBody1"
+                    tools:text="Biryani" />
+
+                <TextView
+                    android:id="@+id/biryani_description"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:text="Rice cooked and simmered with our secret gravy of aromatic spices. Served with spicy tomato sauce and yogurt"
+                    tools:text="Entree 2 description" />
+
+                <TextView
+                    android:id="@+id/biryani_price"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:paddingTop="8dp"
+                    android:text="41 $"
+                    tools:text="$0.00" />
+
+                <View
+                    style="@style/Widget.MyMeal.Divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/biryani_description" />
+
+
+                <RadioButton
+                    android:id="@+id/royal_lobster"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Royal Butter Lobster"
+                    android:textAppearance="?attr/textAppearanceBody1"
+                    tools:text="Royal Butter Lobster" />
+
+                <TextView
+                    android:id="@+id/royal_lobster_description"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:text="Baked lobster with indian butter gravy, mushroom. Served with grilled vegetables"
+                    tools:text="Entree 3 description" />
+
+                <TextView
+                    android:id="@+id/royal_lobster_price"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:paddingTop="8dp"
+                    android:text="99.9 $"
+                    tools:text="$0.00" />
+
+                <View
+                    style="@style/Widget.MyMeal.Divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/royal_lobster_description" />
+
+
+                <RadioButton
+                    android:id="@+id/kebbeh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kebbeh"
+                    android:textAppearance="?attr/textAppearanceBody1"
+                    tools:text="Kebbeh" />
+
+                <TextView
+                    android:id="@+id/kebbeh_description"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:text="Delicately fried meat dumplings filled with minced meat, onion and spices"
+                    tools:text="Entree 4 description" />
+
+                <TextView
+                    android:id="@+id/kebbeh_price"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:paddingTop="8dp"
+                    android:text="14.5 $"
+                    tools:text="$0.00" />
+
+                <View
+                    style="@style/Widget.MyMeal.Divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/kebbeh_description" />
+
+
+                <RadioButton
+                    android:id="@+id/shish_tawook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shish Tawook"
+                    android:textAppearance="?attr/textAppearanceBody1"
+                    tools:text="Shish Tawook" />
+
+                <TextView
+                    android:id="@+id/shish_tawook_description"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:text="3 skewers of chicken breast chunks with our special seasoning. Served with fries, spicy tomato sauce, yogurt and hummus"
+                    tools:text="Entree 4 description" />
+
+                <TextView
+                    android:id="@+id/shish_tawook_price"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:paddingTop="8dp"
+                    android:text="14.5 $"
+                    tools:text="$0.00" />
+
+
+            </RadioGroup>
+
+            <View
+                android:id="@+id/divider"
+                style="@style/Widget.MyMeal.Divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/main_meal_options" />
+
+
+            <TextView
+                android:id="@+id/subtotal"
+                style="@style/Widget.MyMeal.TextView.Subtotal"
+                android:text="199.9 $"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider"
+                tools:text="Subtotal $5.00" />
+
+            <Button
+                android:id="@+id/cancel_button"
+                style="@style/Widget.Order.Button.Cancel"
+                app:layout_constraintEnd_toStartOf="@id/next_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/next_button" />
+
+            <Button
+                android:id="@+id/next_button"
+                style="@style/Widget.Order.Button.Next"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cancel_button"
+                app:layout_constraintTop_toBottomOf="@id/subtotal" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_margin="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/grilled_chicken_description"
+                app:layout_constraintBottom_toBottomOf="@id/grilled_chicken_description"
+                android:src="@drawable/charcoal_grilled_chicken" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
