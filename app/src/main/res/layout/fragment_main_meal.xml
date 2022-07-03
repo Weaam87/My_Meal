@@ -23,6 +23,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
+
                 <RadioButton
                     android:id="@+id/grilled_chicken"
                     android:layout_width="wrap_content"
@@ -31,12 +32,20 @@
                     android:textAppearance="?attr/textAppearanceBody1"
                     tools:text="Charcoal Grilled Chicken" />
 
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/grilled_chickenP_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="194dp"
+                    android:layout_margin="8dp"
+                    app:shapeAppearanceOverlay="@style/cut_corner"
+                    app:srcCompat="@drawable/charcoal_grilled_chicken" />
+
 
                 <TextView
                     android:id="@+id/grilled_chicken_description"
                     style="@style/Widget.MenuItem.TextView.Info"
                     android:text="Seasoned half grilled chicken, spiced rice, yoghurt, green salad and spicy tomato sauce"
-                    tools:text="Entree 1 description" />
+                    tools:text="Rice cooked and simmered with our secret gravy of aromatic spices. Served with spicy tomato sauce" />
 
                 <TextView
                     android:id="@+id/grilled_chicken_price"
@@ -60,6 +69,14 @@
                     android:text="Biryani"
                     android:textAppearance="?attr/textAppearanceBody1"
                     tools:text="Biryani" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/biryani_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="194dp"
+                    android:layout_margin="8dp"
+                    app:shapeAppearanceOverlay="@style/cut_corner"
+                    app:srcCompat="@drawable/biryani" />
 
                 <TextView
                     android:id="@+id/biryani_description"
@@ -91,6 +108,14 @@
                     android:textAppearance="?attr/textAppearanceBody1"
                     tools:text="Royal Butter Lobster" />
 
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/royal_lobster_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="194dp"
+                    android:layout_margin="8dp"
+                    app:shapeAppearanceOverlay="@style/cut_corner"
+                    app:srcCompat="@drawable/royal_butter_lobster" />
+
                 <TextView
                     android:id="@+id/royal_lobster_description"
                     style="@style/Widget.MenuItem.TextView.Info"
@@ -121,6 +146,14 @@
                     android:textAppearance="?attr/textAppearanceBody1"
                     tools:text="Kebbeh" />
 
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/kebbeh_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="194dp"
+                    android:layout_margin="8dp"
+                    app:shapeAppearanceOverlay="@style/cut_corner"
+                    app:srcCompat="@drawable/kebbeh" />
+
                 <TextView
                     android:id="@+id/kebbeh_description"
                     style="@style/Widget.MenuItem.TextView.Info"
@@ -150,6 +183,14 @@
                     android:text="Shish Tawook"
                     android:textAppearance="?attr/textAppearanceBody1"
                     tools:text="Shish Tawook" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/shish_tawook_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="194dp"
+                    android:layout_margin="8dp"
+                    app:shapeAppearanceOverlay="@style/cut_corner"
+                    app:srcCompat="@drawable/shish_tawook" />
 
                 <TextView
                     android:id="@+id/shish_tawook_description"
@@ -201,15 +242,8 @@
                 app:layout_constraintStart_toEndOf="@id/cancel_button"
                 app:layout_constraintTop_toBottomOf="@id/subtotal" />
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_margin="8dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/grilled_chicken_description"
-                app:layout_constraintBottom_toBottomOf="@id/grilled_chicken_description"
-                android:src="@drawable/charcoal_grilled_chicken" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
 </layout>

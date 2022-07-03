@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!-- Cut Corner Image -->
+    <style name="cut_corner" parent="">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">15%</item>
+    </style>
+
     <!-- Button Style for Next Button -->
     <style name="Widget.Order.Button.Next" parent="">
         <item name="android:layout_width">0dp</item>
