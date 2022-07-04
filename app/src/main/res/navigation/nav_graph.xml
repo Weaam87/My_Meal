@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startFragment">
+
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.example.mymeal.ui.StartFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_startFragment_to_mainMeal"
+            app:destination="@id/mainMeal" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainMeal"
+        android:name="com.example.mymeal.ui.MainMeal"
+        android:label="fragment_main_meal"
+        tools:layout="@layout/fragment_main_meal" >
+        <action
+            android:id="@+id/action_mainMeal_to_startFragment"
+            app:destination="@id/startFragment"
+            app:popUpTo="@id/startFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_mainMeal_to_saladMenu"
+            app:destination="@id/saladMenu" />
+    </fragment>
+    <fragment
+        android:id="@+id/saladMenu"
+        android:name="com.example.mymeal.ui.SaladMenu"
+        android:label="fragment_salad_menu"
+        tools:layout="@layout/fragment_salad_menu" >
+        <action
+            android:id="@+id/action_saladMenu_to_startFragment"
+            app:destination="@id/startFragment"
+            app:popUpTo="@id/startFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_saladMenu_to_drinksMenu"
+            app:destination="@id/drinksMenu" />
+    </fragment>
+    <fragment
+        android:id="@+id/drinksMenu"
+        android:name="com.example.mymeal.ui.DrinksMenu"
+        android:label="fragment_drinks_menu"
+        tools:layout="@layout/fragment_drinks_menu" >
+        <action
+            android:id="@+id/action_drinksMenu_to_startFragment"
+            app:destination="@id/startFragment"
+            app:popUpTo="@id/startFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_drinksMenu_to_dessertsMenu"
+            app:destination="@id/dessertsMenu" />
+    </fragment>
+    <fragment
+        android:id="@+id/dessertsMenu"
+        android:name="com.example.mymeal.ui.DessertsMenu"
+        android:label="fragment_desserts_menu"
+        tools:layout="@layout/fragment_desserts_menu" >
+        <action
+            android:id="@+id/action_dessertsMenu_to_startFragment"
+            app:destination="@id/startFragment"
+            app:popUpTo="@id/startFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_dessertsMenu_to_reservationDate"
+            app:destination="@id/reservationDate" />
+    </fragment>
+    <fragment
+        android:id="@+id/reservationDate"
+        android:name="com.example.mymeal.ui.ReservationDate"
+        android:label="fragment_reservation_date"
+        tools:layout="@layout/fragment_reservation_date" >
+        <action
+            android:id="@+id/action_reservationDate_to_startFragment"
+            app:destination="@id/startFragment"
+            app:popUpTo="@id/startFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_reservationDate_to_orderSummary"
+            app:destination="@id/orderSummary" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderSummary"
+        android:name="com.example.mymeal.ui.OrderSummary"
+        android:label="fragment_order_summary"
+        tools:layout="@layout/fragment_order_summary" >
+        <action
+            android:id="@+id/action_orderSummary_to_startFragment"
+            app:destination="@id/startFragment"
+            app:popUpTo="@id/startFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
