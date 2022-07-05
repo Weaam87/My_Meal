@@ -33,7 +33,7 @@ object DataSource {
         "shish tawook" to
                 MenuItem(
                     name = "Shish Tawook",
-                    description = "3 skewers of chicken breast chunks with our special seasoning."+
+                    description = "Three skewers of chicken breast chunks with our special seasoning."+
                             " Served with fries, spicy tomato sauce, yogurt and hummus",
                     price = 32.5
                 )
