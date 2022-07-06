@@ -1,14 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".ui.DessertsMenu">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <data>
 
-</FrameLayout>
+        <variable
+            name="viewModel"
+            type="com.example.mymeal.model.OrderViewModel" />
+
+        <variable
+            name="dessertMenu"
+            type="com.example.mymeal.ui.DessertsMenu" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="16dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                app:layout_constraintBottom_toTopOf="@+id/divider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RadioGroup
+                    android:id="@+id/desserts_options"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <RadioButton
+                        android:id="@+id/luqaimat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick='@{() -> viewModel.setDessert("luqaimat")}'
+                        android:text='@{viewModel.menuItems["luqaimat"].name}'
+                        android:textAppearance="?attr/textAppearanceBody1"
+                        tools:text="Luqaimat" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/luqaimat_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="194dp"
+                        android:layout_margin="8dp"
+                        app:shapeAppearanceOverlay="@style/cut_corner"
+                        app:srcCompat="@drawable/luqaimat" />
+
+                    <TextView
+                        android:id="@+id/luqaimat_description"
+                        style="@style/Widget.MenuItem.TextView.Info"
+                        android:text='@{viewModel.menuItems["luqaimat"].description}'
+                        tools:text="Entree 4 description" />
+
+                    <TextView
+                        android:id="@+id/luqaimat_price"
+                        style="@style/Widget.MenuItem.TextView.Info"
+                        android:paddingTop="8dp"
+                        android:text='@{viewModel.menuItems["luqaimat"].getFormattedPrice()}'
+                        tools:text="$0.00" />
+
+                    <View
+                        style="@style/Widget.MyMeal.Divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/kebbeh_description" />
+
+
+                    <RadioButton
+                        android:id="@+id/Kunafa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick='@{() -> viewModel.setDessert("Kunafa")}'
+                        android:text='@{viewModel.menuItems["Kunafa"].name}'
+                        android:textAppearance="?attr/textAppearanceBody1"
+                        tools:text="Kunafa" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/Kunafa_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="194dp"
+                        android:layout_margin="8dp"
+                        app:shapeAppearanceOverlay="@style/cut_corner"
+                        app:srcCompat="@drawable/kunafa" />
+
+                    <TextView
+                        android:id="@+id/Kunafa_description"
+                        style="@style/Widget.MenuItem.TextView.Info"
+                        android:text='@{viewModel.menuItems["Kunafa"].description}'
+                        tools:text="Entree 4 description" />
+
+                    <TextView
+                        android:id="@+id/Kunafa_price"
+                        style="@style/Widget.MenuItem.TextView.Info"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:text='@{viewModel.menuItems["Kunafa"].getFormattedPrice()}'
+                        tools:text="$0.00" />
+
+
+                </RadioGroup>
+            </com.google.android.material.card.MaterialCardView>
+
+            <View
+                android:id="@+id/divider"
+                style="@style/Widget.MyMeal.Divider"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardView" />
+
+
+            <TextView
+                android:id="@+id/subtotal"
+                style="@style/Widget.MyMeal.TextView.Subtotal"
+                android:text='@{@string/subtotal(viewModel.subtotal)}'
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider"
+                tools:text="Subtotal $5.00" />
+
+            <Button
+                android:id="@+id/cancel_button"
+                style="@style/Widget.Order.Button.Cancel"
+                android:onClick="@{()-> dessertMenu.showDialog()}"
+                app:layout_constraintEnd_toStartOf="@id/next_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/next_button" />
+
+            <Button
+                android:id="@+id/next_button"
+                style="@style/Widget.Order.Button.Next"
+                android:onClick="@{()-> dessertMenu.goToNextFragment()}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cancel_button"
+                app:layout_constraintTop_toBottomOf="@id/subtotal" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</layout>

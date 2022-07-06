@@ -121,7 +121,7 @@ class OrderViewModel : ViewModel() {
         //in case if the users changed their mind
         _subtotal.value = (_subtotal.value ?: 0.0) - previousDessertPrice
 
-        _drink.value = menuItems[dessert]
+        _dessert.value = menuItems[dessert]
 
         //reflect the price of the selected dessert
         updateSubtotal(menuItems[dessert]?.price ?: 0.0)
