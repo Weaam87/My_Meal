@@ -140,7 +140,7 @@
                         app:srcCompat="@drawable/jarjeer_salad" />
 
                     <TextView
-                        android:id="@+id/shish_tawook_description"
+                        android:id="@+id/arjeer_description"
                         style="@style/Widget.MenuItem.TextView.Info"
                         android:text='@{viewModel.menuItems["jarjeer"].description}'
                         tools:text="Entree 4 description" />
