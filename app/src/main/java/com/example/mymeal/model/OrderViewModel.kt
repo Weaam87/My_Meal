@@ -1,10 +1,12 @@
 package com.example.mymeal.model
 
+import android.view.View
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import com.example.mymeal.data.DataSource
+import com.google.android.material.snackbar.Snackbar
 import java.text.NumberFormat
 import java.text.SimpleDateFormat
 import java.util.*
@@ -66,6 +68,9 @@ class OrderViewModel : ViewModel() {
         NumberFormat.getCurrencyInstance().format(it)
     }
 
+    init {
+        resetOrder()
+    }
     // Add meal for order
     fun setMeal(meal: String) {
 
@@ -168,9 +173,12 @@ class OrderViewModel : ViewModel() {
 
     //Charge extra for the same day booking
     private fun updatePriceForSameDay() {
+        var calculatedPrice = (_mainMeal.value?.price ?: 0.0) + (_salad.value?.price ?: 0.0) +
+                (_drink.value?.price?:0.0) + (_dessert.value?.price ?: 0.0)
         if (dateOptions[0] == _date.value) {
-            _subtotal.value = _subtotal.value?.plus(PRICE_FOR_SAME_DAY)
+            calculatedPrice += PRICE_FOR_SAME_DAY
         }
+        _subtotal.value = calculatedPrice
     }
 
     //Reset all values
