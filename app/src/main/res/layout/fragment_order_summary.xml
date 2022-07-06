@@ -1,14 +1,208 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".ui.OrderSummary">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-         />
+    <data>
 
-</FrameLayout>
+        <variable
+            name="viewModel"
+            type="com.example.mymeal.model.OrderViewModel" />
+
+        <variable
+            name="orderSummaryFragment"
+            type="com.example.mymeal.ui.OrderSummary" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:id="@+id/order_summary"
+                style="@style/Widget.MyMeal.TextView.CheckoutItem.Label"
+                android:text="@string/order_summary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/mainMeal_selection"
+                style="@style/Widget.MyMeal.TextView.CheckoutItem.Info"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@{viewModel.mainMeal.name}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/order_summary"
+                tools:text="Royal Butter Lobster" />
+
+            <TextView
+                android:id="@+id/mainMeal_price"
+                style="@style/Widget.MyMeal.TextView.CheckoutItem.Info"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@{viewModel.mainMeal.formattedPrice}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mainMeal_selection"
+                tools:text="$7.00" />
+
+            <View
+                android:id="@+id/divider1"
+                style="@style/Widget.MyMeal.Divider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mainMeal_price" />
+
+            <TextView
+                android:id="@+id/salad_selection"
+                style="@style/Widget.MyMeal.TextView.CheckoutItem.Info"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@{viewModel.salad.name}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider1"
+                tools:text="Tabbouleh Salad" />
+
+            <TextView
+                android:id="@+id/salad_price"
+                style="@style/Widget.MyMeal.TextView.CheckoutItem.Info"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@{viewModel.salad.formattedPrice}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/salad_selection"
+                tools:text="$2.00" />
+
+            <View
+                android:id="@+id/divider2"
+                style="@style/Widget.MyMeal.Divider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/salad_price" />
+
+            <TextView
+                android:id="@+id/drink_selection"
+                style="@style/Widget.MyMeal.TextView.CheckoutItem.Info"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@{viewModel.drink.name}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider2"
+                tools:text="Osha Mojito" />
+
+            <TextView
+                android:id="@+id/drink_price"
+                style="@style/Widget.MyMeal.TextView.CheckoutItem.Info"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text='@{viewModel.drink.formattedPrice}'
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/drink_selection"
+                tools:text="$1.00" />
+
+            <View
+                android:id="@+id/divider3"
+                style="@style/Widget.MyMeal.Divider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/drink_price" />
+
+            <TextView
+                android:id="@+id/dessert_selection"
+                style="@style/Widget.MyMeal.TextView.CheckoutItem.Info"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@{viewModel.dessert.name}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider3"
+                tools:text="Kunafa cheese" />
+
+
+            <TextView
+                android:id="@+id/dessert_price"
+                style="@style/Widget.MyMeal.TextView.CheckoutItem.Info"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text='@{viewModel.dessert.formattedPrice}'
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dessert_selection"
+                tools:text="$6.00" />
+
+            <View
+                android:id="@+id/divider"
+                style="@style/Widget.MyMeal.Divider"
+                android:layout_height="3dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.531"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dessert_price" />
+
+            <TextView
+                android:id="@+id/subtotal"
+                style="@style/Widget.MyMeal.TextView.Subtotal"
+                android:layout_marginTop="8dp"
+                android:text="@{@string/subtotal(viewModel.subtotal)}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider"
+                tools:text="Subtotal: $10.00" />
+
+            <TextView
+                android:id="@+id/tax"
+                style="@style/Widget.MyMeal.TextView.Subtotal"
+                android:layout_marginTop="8dp"
+                android:text="@{@string/tax(viewModel.tax)}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/subtotal"
+                tools:text="Tax: $0.73" />
+
+
+            <TextView
+                android:id="@+id/total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@{@string/total(viewModel.total)}"
+                android:textAllCaps="true"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tax"
+                tools:text="Total: $10.73" />
+
+
+            <Button
+                android:id="@+id/submit_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:onClick="@{()-> orderSummaryFragment.submitOrder()}"
+                android:text="@string/submit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/total" />
+
+            <Button
+                android:id="@+id/cancel_button"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:onClick="@{()-> orderSummaryFragment.showDialog()}"
+                android:text="@string/cancel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/submit_button" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

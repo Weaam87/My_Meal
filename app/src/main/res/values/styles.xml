@@ -15,9 +15,8 @@
         <item name="android:text">@string/next</item>
     </style>
 
-    <!-- Button Style for Next Button -->
-    <style name="Widget.Order.Button.Cancel"
-        parent="Widget.MaterialComponents.Button.OutlinedButton">
+    <!-- Button Style for Cancel Button -->
+    <style name="Widget.Order.Button.Cancel" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginEnd">16dp</item>
@@ -50,5 +49,24 @@
         <item name="android:layout_height">1dp</item>
         <item name="android:background">?attr/dividerHorizontal</item>
         <item name="android:layout_marginTop">8dp</item>
+    </style>
+
+    <!-- TextView Style for Checkout Item Name -->
+    <style name="Widget.MyMeal.TextView.CheckoutItem.Info" parent="Widget.MaterialComponents.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:textAppearance">?attr/textAppearanceBody1</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <!-- TextView Style for Checkout Item Label -->
+    <style name="Widget.MyMeal.TextView.CheckoutItem.Label" parent="Widget.MaterialComponents.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textAppearance">?attr/textAppearanceBody1</item>
+        <item name="android:textStyle">bold</item>
     </style>
 </resources>

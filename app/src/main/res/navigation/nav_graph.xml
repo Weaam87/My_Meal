@@ -8,8 +8,8 @@
     <fragment
         android:id="@+id/startFragment"
         android:name="com.example.mymeal.ui.StartFragment"
-        android:label="fragment_start"
-        tools:layout="@layout/fragment_start" >
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_start">
         <action
             android:id="@+id/action_startFragment_to_mainMeal"
             app:destination="@id/mainMeal" />
@@ -17,8 +17,8 @@
     <fragment
         android:id="@+id/mainMeal"
         android:name="com.example.mymeal.ui.MainMeal"
-        android:label="fragment_main_meal"
-        tools:layout="@layout/fragment_main_meal" >
+        android:label="@string/choose_meal"
+        tools:layout="@layout/fragment_main_meal">
         <action
             android:id="@+id/action_mainMeal_to_startFragment"
             app:destination="@id/startFragment"
@@ -31,8 +31,8 @@
     <fragment
         android:id="@+id/saladMenu"
         android:name="com.example.mymeal.ui.SaladMenu"
-        android:label="fragment_salad_menu"
-        tools:layout="@layout/fragment_salad_menu" >
+        android:label="@string/choose_salad"
+        tools:layout="@layout/fragment_salad_menu">
         <action
             android:id="@+id/action_saladMenu_to_startFragment"
             app:destination="@id/startFragment"
@@ -45,8 +45,8 @@
     <fragment
         android:id="@+id/drinksMenu"
         android:name="com.example.mymeal.ui.DrinksMenu"
-        android:label="fragment_drinks_menu"
-        tools:layout="@layout/fragment_drinks_menu" >
+        android:label="@string/choose_drink"
+        tools:layout="@layout/fragment_drinks_menu">
         <action
             android:id="@+id/action_drinksMenu_to_startFragment"
             app:destination="@id/startFragment"
@@ -59,8 +59,8 @@
     <fragment
         android:id="@+id/dessertsMenu"
         android:name="com.example.mymeal.ui.DessertsMenu"
-        android:label="fragment_desserts_menu"
-        tools:layout="@layout/fragment_desserts_menu" >
+        android:label="@string/choose_dessert"
+        tools:layout="@layout/fragment_desserts_menu">
         <action
             android:id="@+id/action_dessertsMenu_to_startFragment"
             app:destination="@id/startFragment"
@@ -73,8 +73,8 @@
     <fragment
         android:id="@+id/reservationDate"
         android:name="com.example.mymeal.ui.ReservationDate"
-        android:label="fragment_reservation_date"
-        tools:layout="@layout/fragment_reservation_date" >
+        android:label="@string/choose_date"
+        tools:layout="@layout/fragment_reservation_date">
         <action
             android:id="@+id/action_reservationDate_to_startFragment"
             app:destination="@id/startFragment"
@@ -87,8 +87,8 @@
     <fragment
         android:id="@+id/orderSummary"
         android:name="com.example.mymeal.ui.OrderSummary"
-        android:label="fragment_order_summary"
-        tools:layout="@layout/fragment_order_summary" >
+        android:label="@string/order_summary"
+        tools:layout="@layout/fragment_order_summary">
         <action
             android:id="@+id/action_orderSummary_to_startFragment"
             app:destination="@id/startFragment"
