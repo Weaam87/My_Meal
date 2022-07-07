@@ -197,4 +197,24 @@ class OrderViewModel : ViewModel() {
         previousDessertPrice = 0.0
     }
 
+    //Check if _mainMeal.value is null
+    fun hasNoMeal() : Boolean {
+        return _mainMeal.value == null
+    }
+
+    //Check if _salad.value is null
+    fun hasNoSalad() : Boolean {
+        return _salad.value == null
+    }
+
+    //Check if _drink.value is null
+    fun hasNoDrink() : Boolean {
+        return _drink.value == null
+    }
+
+    //Check if _dessert.value is null
+    fun hasNoDessert() : Boolean {
+        return _dessert.value == null
+    }
+
 }

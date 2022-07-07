@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">My Meal</string>
-    <string name="choose_meal">Choose Meal</string>
-    <string name="choose_salad">Choose Salad</string>
-    <string name="choose_drink">Choose Drink</string>
-    <string name="choose_dessert">Choose Dessert</string>
-    <string name="choose_date">Choose booking date</string>
+    <string name="choose_meal">Select Meal</string>
+    <string name="choose_salad">Select Salad</string>
+    <string name="choose_drink">Select Drink</string>
+    <string name="choose_dessert">Select Dessert</string>
+    <string name="choose_date">Select booking date</string>
     <string name="cancel">Cancel</string>
     <string name="next">Next</string>
     <string name="start_order">Start Order</string>
@@ -15,6 +15,10 @@
     <string name="yes">Yes</string>
     <string name="submit">Submit Order</string>
     <string name="submit_order">Order Submitted!</string>
+    <string name="select_meal">Select your meal</string>
+    <string name="select_salad">Select your salad</string>
+    <string name="select_drink">Select your drink</string>
+    <string name="select_dessert">Select your dessert</string>
     <string name="order_summary">Order Summary</string>
     <string name="no">No</string>
     <string name="extra_charge">Extra charge for same day booking.</string>

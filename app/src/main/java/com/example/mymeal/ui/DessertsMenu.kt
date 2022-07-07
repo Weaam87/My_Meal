@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.mymeal.R
@@ -37,9 +38,13 @@ class DessertsMenu : Fragment() {
         binding.dessertMenu = this
     }
 
-    //Navigate to the reservation date fragment
+    //Navigate to the reservation date fragment if _dessert.value is not nul
     fun goToNextFragment() {
-        findNavController().navigate(R.id.action_dessertsMenu_to_reservationDate)
+        if (sharedViewModel.hasNoDessert()) {
+            Toast.makeText(context, R.string.select_dessert, Toast.LENGTH_SHORT).show()
+        } else {
+            findNavController().navigate(R.id.action_dessertsMenu_to_reservationDate)
+        }
     }
 
     //Cancel the order

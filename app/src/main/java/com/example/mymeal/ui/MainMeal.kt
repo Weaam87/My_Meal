@@ -5,12 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.mymeal.R
 import com.example.mymeal.databinding.FragmentMainMealBinding
 import com.example.mymeal.model.OrderViewModel
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.snackbar.Snackbar
 
 
 class MainMeal : Fragment() {
@@ -38,9 +40,13 @@ class MainMeal : Fragment() {
         binding.mainMeal = this
     }
 
-    //Navigate to the salad menu fragment
+    //Navigate to the salad menu fragment if _mainMail.value is not nul
     fun goToNextFragment() {
-        findNavController().navigate(R.id.action_mainMeal_to_saladMenu)
+        if (sharedViewModel.hasNoMeal()) {
+            Toast.makeText(context, R.string.select_meal, Toast.LENGTH_SHORT).show()
+        } else {
+            findNavController().navigate(R.id.action_mainMeal_to_saladMenu)
+        }
     }
 
     //Cancel the order
