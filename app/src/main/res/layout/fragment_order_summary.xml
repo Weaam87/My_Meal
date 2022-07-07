@@ -136,6 +136,34 @@
                 tools:text="$6.00" />
 
             <View
+                android:id="@+id/divider4"
+                style="@style/Widget.MyMeal.Divider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dessert_price" />
+
+            <TextView
+                android:id="@+id/same_day_booking"
+                style="@style/Widget.MyMeal.TextView.CheckoutItem.Info"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/same_day_booking"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider4"
+                tools:text="Same day booking charge" />
+
+
+            <TextView
+                android:id="@+id/same_day_booking_charge"
+                style="@style/Widget.MyMeal.TextView.CheckoutItem.Info"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="$5.00"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/same_day_booking"
+                tools:text="$5.00" />
+
+            <View
                 android:id="@+id/divider"
                 style="@style/Widget.MyMeal.Divider"
                 android:layout_height="3dp"
@@ -143,12 +171,12 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.531"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/dessert_price" />
+                app:layout_constraintTop_toBottomOf="@id/same_day_booking_charge" />
 
             <TextView
                 android:id="@+id/subtotal"
                 style="@style/Widget.MyMeal.TextView.Subtotal"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="24dp"
                 android:text="@{@string/subtotal(viewModel.subtotal)}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

@@ -5,6 +5,7 @@
     <string name="choose_drink">Select Drink</string>
     <string name="choose_dessert">Select Dessert</string>
     <string name="choose_date">Select booking date</string>
+    <string name="same_day_booking">Same day booking charge</string>
     <string name="cancel">Cancel</string>
     <string name="next">Next</string>
     <string name="start_order">Start Order</string>

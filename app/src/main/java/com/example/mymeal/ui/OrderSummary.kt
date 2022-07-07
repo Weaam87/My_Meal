@@ -43,6 +43,13 @@ class OrderSummary : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = sharedViewModel
         binding.orderSummaryFragment = this
+
+        //Hide the extra charge text if the booking is not in the same day
+        if (sharedViewModel.notSameDayOrder()) {
+            binding.sameDayBooking.setVisibility(View.GONE)
+            binding.sameDayBookingCharge.setVisibility(View.GONE)
+            binding.divider4.setVisibility(View.GONE)
+        }
     }
 
     //Cancel the order

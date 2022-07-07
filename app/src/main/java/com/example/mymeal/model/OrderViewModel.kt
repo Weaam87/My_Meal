@@ -1,12 +1,11 @@
 package com.example.mymeal.model
 
-import android.view.View
+
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import com.example.mymeal.data.DataSource
-import com.google.android.material.snackbar.Snackbar
 import java.text.NumberFormat
 import java.text.SimpleDateFormat
 import java.util.*
@@ -215,6 +214,11 @@ class OrderViewModel : ViewModel() {
     //Check if _dessert.value is null
     fun hasNoDessert() : Boolean {
         return _dessert.value == null
+    }
+
+    //Check if the booking is in the same day that the order was made
+    fun notSameDayOrder() : Boolean {
+        return _date.value != dateOptions[0]
     }
 
 }
