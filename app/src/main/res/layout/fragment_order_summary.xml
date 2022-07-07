@@ -30,6 +30,7 @@
                 android:id="@+id/order_summary"
                 style="@style/Widget.MyMeal.TextView.CheckoutItem.Label"
                 android:text="@string/order_summary"
+                android:padding="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
