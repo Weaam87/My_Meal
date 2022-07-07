@@ -1,6 +1,7 @@
 package com.example.mymeal.ui
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -61,10 +62,22 @@ class OrderSummary : Fragment() {
     }
 
     fun submitOrder() {
-        // Show snackbar to "confirm" order
-        Snackbar.make(binding.root, R.string.submit_order, Snackbar.LENGTH_SHORT).show()
+        val orderSummary = getString(R.string.order_details,
+            sharedViewModel.mainMeal.value?.name.toString(),
+            sharedViewModel.salad.value?.name.toString(),
+            sharedViewModel.drink.value?.name.toString(),
+            sharedViewModel.dessert.value?.name.toString(),
+            sharedViewModel.date.value.toString(),
+            sharedViewModel.total.value.toString()
+        )
+        val intent = Intent(Intent.ACTION_SEND).setType("text/plain")
+            .putExtra(Intent.EXTRA_SUBJECT, getString(R.string.new_order))
+            .putExtra(Intent.EXTRA_TEXT, orderSummary)
 
-        // sharedViewModel.resetOrder()
+        //This check will prevent the app from crashing if there's no app to handle the intent
+        if (activity?.packageManager?.resolveActivity(intent, 0) != null) {
+            startActivity(intent)
+        }
     }
 
     private fun doNothing() {
