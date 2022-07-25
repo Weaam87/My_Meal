@@ -11,12 +11,12 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/start_order"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/logo"
                 android:layout_width="match_parent"
-                android:layout_height="500dp"
+                android:layout_height="450dp"
                 android:layout_marginBottom="8dp"
                 android:src="@drawable/restaurant_logo2"
                 app:layout_constraintBottom_toTopOf="@+id/start_order_button"
@@ -30,10 +30,20 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:text="@string/start_order"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+            <Button
+                android:id="@+id/order_history"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/order_history"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/start_order_button" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

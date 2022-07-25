@@ -28,6 +28,9 @@ class StartFragment : Fragment() {
       binding.startOrderButton.setOnClickListener {
          findNavController().navigate(R.id.action_startFragment_to_mainMeal)
       }
+      binding.orderHistory.setOnClickListener {
+         findNavController().navigate(R.id.action_startFragment_to_orderListFragment)
+      }
       return root
    }
 

@@ -13,6 +13,7 @@
     <string name="choose_date">Select Booking date</string>
     <string name="same_day_booking">Same day booking charge</string>
     <string name="new_order">New Order</string>
+    <string name="order_history">Order History</string>
     <string name="order_details">Hello , this is my order :\n\nMain Meal : %1$s \nSalad : %2$s \nDrink : %3$s \nDessert : %4$s \nBooking date : %5$s\n\nTotal : %6$s \nThank you.</string>
     <string name="cancel">Cancel</string>
     <string name="next">Next</string>
