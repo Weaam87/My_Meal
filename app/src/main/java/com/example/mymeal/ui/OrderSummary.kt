@@ -9,11 +9,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.example.mymeal.OrderApplication
 import com.example.mymeal.R
 import com.example.mymeal.databinding.FragmentOrderSummaryBinding
 import com.example.mymeal.model.OrderViewModel
+import com.example.mymeal.model.OrderViewModelFactory
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.android.material.snackbar.Snackbar
 
 
 class OrderSummary : Fragment() {
@@ -24,7 +25,9 @@ class OrderSummary : Fragment() {
     private val binding get() = _binding!!
 
     //Get instance of OrderViewModel
-    private val sharedViewModel: OrderViewModel by activityViewModels()
+    private val sharedViewModel: OrderViewModel by activityViewModels() {
+        OrderViewModelFactory((activity?.application as OrderApplication).database.orderDao())
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -53,6 +56,18 @@ class OrderSummary : Fragment() {
         }
     }
 
+    // get the order details to add it to the database
+    private fun addNewOrder() {
+        sharedViewModel.addNewOrder(
+            sharedViewModel.mainMeal.value?.name.toString(),
+            sharedViewModel.salad.value?.name.toString(),
+            sharedViewModel.drink.value?.name.toString(),
+            sharedViewModel.dessert.value?.name.toString(),
+            sharedViewModel.date.value.toString(),
+            sharedViewModel.total.value.toString()
+        )
+    }
+
     //Cancel the order
     private fun cancelOrder() {
         //Reset the values
@@ -62,6 +77,9 @@ class OrderSummary : Fragment() {
     }
 
     fun submitOrder() {
+        // add the order to the database
+        addNewOrder()
+
         val orderSummary = getString(R.string.order_details,
             sharedViewModel.mainMeal.value?.name.toString(),
             sharedViewModel.salad.value?.name.toString(),

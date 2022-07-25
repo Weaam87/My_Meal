@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">My Meal</string>
+    <string name="main_meal">Main Meal : %1$s</string>
+    <string name="salad">Salad : %1$s</string>
+    <string name="drink">Drink : %1$s</string>
+    <string name="dessert">Dessert : %1$s</string>
+    <string name="booking_data">Booking Date : %1$s</string>
+    <string name="total_string">Total : %1$s</string>
     <string name="choose_meal">Select Meal</string>
     <string name="choose_salad">Select Salad</string>
     <string name="choose_drink">Select Drink</string>

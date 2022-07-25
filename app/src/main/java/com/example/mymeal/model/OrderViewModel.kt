@@ -1,11 +1,11 @@
 package com.example.mymeal.model
 
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
 import com.example.mymeal.data.DataSource
+import com.example.mymeal.data.OrderDao
+import com.example.mymeal.data.OrderDetails
+import kotlinx.coroutines.launch
 import java.text.NumberFormat
 import java.text.SimpleDateFormat
 import java.util.*
@@ -13,7 +13,10 @@ import java.util.*
 
 private const val PRICE_FOR_SAME_DAY = 5.00
 
-class OrderViewModel : ViewModel() {
+class OrderViewModel(private val orderDao: OrderDao) : ViewModel() {
+
+    // Get all orders from the database
+    val allOrders : LiveData<List<OrderDetails>> = orderDao.getAllOrders().asLiveData()
 
     // Map of food items
     val menuItems = DataSource.menuItems
@@ -70,6 +73,42 @@ class OrderViewModel : ViewModel() {
     init {
         resetOrder()
     }
+
+    // Add new order to the database using coroutine
+    private fun insertOrder(orderDetails: OrderDetails) {
+        viewModelScope.launch { orderDao.insert(orderDetails) }
+    }
+
+    private fun getNewOrderEntry(
+        mainMeal : String,
+        salad : String,
+        drink : String,
+        dessert : String,
+        bookingDate : String,
+        total : String
+    ) : OrderDetails {
+        return OrderDetails(
+            mainMeal = mainMeal,
+            salad = salad,
+            drink = drink,
+            dessert = dessert,
+            bookingDate = bookingDate,
+            total = total
+        )
+    }
+
+    fun addNewOrder(
+        mainMeal : String,
+        salad : String,
+        drink : String,
+        dessert : String,
+        bookingDate : String,
+        total : String
+    ) {
+        val newOrder = getNewOrderEntry(mainMeal,salad,drink,dessert,bookingDate,total)
+        insertOrder(newOrder)
+    }
+
     // Add meal for order
     fun setMeal(meal: String) {
 
@@ -221,4 +260,14 @@ class OrderViewModel : ViewModel() {
         return _date.value != dateOptions[0]
     }
 
+}
+
+class OrderViewModelFactory(private val orderDao: OrderDao) : ViewModelProvider.Factory {
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        if (modelClass.isAssignableFrom(OrderViewModel::class.java)) {
+            @Suppress("UNCHECKED_CAST")
+            return OrderViewModel(orderDao) as T
+        }
+        throw IllegalArgumentException("Unknown ViewModel class")
+    }
 }

@@ -8,9 +8,11 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.example.mymeal.OrderApplication
 import com.example.mymeal.R
 import com.example.mymeal.databinding.FragmentSaladMenuBinding
 import com.example.mymeal.model.OrderViewModel
+import com.example.mymeal.model.OrderViewModelFactory
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 
@@ -22,7 +24,9 @@ class SaladMenu : Fragment() {
     private val binding get() = _binding!!
 
     //Get instance of OrderViewModel
-    private val sharedViewModel: OrderViewModel by activityViewModels()
+    private val sharedViewModel: OrderViewModel by activityViewModels() {
+        OrderViewModelFactory((activity?.application as OrderApplication).database.orderDao())
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
