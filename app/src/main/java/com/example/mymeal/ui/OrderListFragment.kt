@@ -51,4 +51,12 @@ class OrderListFragment : Fragment() {
         binding.recyclerView.layoutManager = LinearLayoutManager(this.context)
     }
 
+    /**
+    Clear out the binding object when the view hierarchy associated with the fragment
+    is being removed
+     */
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }

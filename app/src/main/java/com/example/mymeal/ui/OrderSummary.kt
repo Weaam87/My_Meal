@@ -59,12 +59,12 @@ class OrderSummary : Fragment() {
     // get the order details to add it to the database
     private fun addNewOrder() {
         sharedViewModel.addNewOrder(
-            sharedViewModel.mainMeal.value?.name.toString(),
-            sharedViewModel.salad.value?.name.toString(),
-            sharedViewModel.drink.value?.name.toString(),
-            sharedViewModel.dessert.value?.name.toString(),
-            sharedViewModel.date.value.toString(),
-            sharedViewModel.total.value.toString()
+            getString(R.string.main_meal,sharedViewModel.mainMeal.value?.name.toString()),
+            getString(R.string.salad,sharedViewModel.salad.value?.name.toString()),
+            getString(R.string.drink,sharedViewModel.drink.value?.name.toString()),
+            getString(R.string.dessert,sharedViewModel.dessert.value?.name.toString()),
+            getString(R.string.booking_data,sharedViewModel.date.value.toString()),
+            getString(R.string.total_string,sharedViewModel.total.value.toString())
         )
     }
 
