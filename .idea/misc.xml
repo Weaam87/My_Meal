@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/user/Desktop/android/MyMeal/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/user/Desktop/android/MyMeal/app/src/main/res/drawable/ic_history_24.xml" value="0.144" />
+        <entry key="..\:/Users/user/Desktop/android/MyMeal/app/src/main/res/drawable/ic_home.xml" value="0.144" />
+        <entry key="..\:/Users/user/Desktop/android/MyMeal/app/src/main/res/layout/activity_main.xml" value="0.16494845360824742" />
         <entry key="..\:/Users/user/Desktop/android/MyMeal/app/src/main/res/layout/fragment_desserts_menu.xml" value="0.1" />
         <entry key="..\:/Users/user/Desktop/android/MyMeal/app/src/main/res/layout/fragment_drinks_menu.xml" value="0.15489130434782608" />
         <entry key="..\:/Users/user/Desktop/android/MyMeal/app/src/main/res/layout/fragment_main_meal.xml" value="0.1" />
@@ -13,6 +15,7 @@
         <entry key="..\:/Users/user/Desktop/android/MyMeal/app/src/main/res/layout/fragment_salad_menu.xml" value="0.1403985507246377" />
         <entry key="..\:/Users/user/Desktop/android/MyMeal/app/src/main/res/layout/fragment_start.xml" value="0.1644021739130435" />
         <entry key="..\:/Users/user/Desktop/android/MyMeal/app/src/main/res/layout/order_list.xml" value="0.25" />
+        <entry key="..\:/Users/user/Desktop/android/MyMeal/app/src/main/res/menu/drawer_menu.xml" value="0.5" />
       </map>
     </option>
   </component>

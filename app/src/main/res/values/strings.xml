@@ -17,6 +17,9 @@
     <string name="order_details">Hello , this is my order :\n\nMain Meal : %1$s \nSalad : %2$s \nDrink : %3$s \nDessert : %4$s \nBooking date : %5$s\n\nTotal : %6$s \nThank you.</string>
     <string name="cancel">Cancel</string>
     <string name="next">Next</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="start_new_order">Start New Order</string>
     <string name="start_order">Start Order</string>
     <string name="subtotal">Subtotal : %s</string>
     <string name="tax">Tax Rate : 0.06 = %s</string>
