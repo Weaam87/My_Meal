@@ -6,12 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mymeal.OrderApplication
 import com.example.mymeal.OrderListAdapter
 import com.example.mymeal.R
-import com.example.mymeal.data.OrderDetails
 import com.example.mymeal.databinding.FragmentOrderListBinding
 import com.example.mymeal.model.OrderViewModel
 import com.example.mymeal.model.OrderViewModelFactory
