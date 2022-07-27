@@ -79,6 +79,11 @@ class OrderViewModel(private val orderDao: OrderDao) : ViewModel() {
         viewModelScope.launch { orderDao.insert(orderDetails) }
     }
 
+    // Delete an order from the database using coroutine
+    fun deleteOrder(orderDetails: OrderDetails) {
+        viewModelScope.launch { orderDao.delete(orderDetails) }
+    }
+
     private fun getNewOrderEntry(
         mainMeal : String,
         salad : String,

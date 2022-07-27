@@ -12,7 +12,7 @@ import com.example.mymeal.databinding.OrderListBinding
 class OrderListAdapter(private val onOrderClicked : (OrderDetails) -> Unit) :
 ListAdapter<OrderDetails , OrderListAdapter.OrderViewHoled>(DiffCallback) {
 
-    class OrderViewHoled(private var binding : OrderListBinding) : RecyclerView.ViewHolder(binding.root)  {
+    class OrderViewHoled(var binding : OrderListBinding) : RecyclerView.ViewHolder(binding.root)  {
         fun bind(orderDetails: OrderDetails) {
             binding.mainMeal.text = orderDetails.mainMeal
             binding.salad.text = orderDetails.salad
@@ -28,7 +28,7 @@ ListAdapter<OrderDetails , OrderListAdapter.OrderViewHoled>(DiffCallback) {
             OrderListBinding.inflate(LayoutInflater.from(parent.context))
         )
         //set the onClickListener() to call onOrderClicked() for the item at the current position.
-        viewHolder.itemView.setOnClickListener {
+        viewHolder.binding.imageView.setOnClickListener{
             val position = viewHolder.adapterPosition
             onOrderClicked(getItem(position))
         }

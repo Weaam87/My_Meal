@@ -23,6 +23,8 @@
     <string name="tax">Tax Rate : 0.06 = %s</string>
     <string name="total">Total : %s</string>
     <string name="cancel_order">Cancel order ?</string>
+    <string name="delete_order">Delete order ?</string>
+    <string name="can_not_undo">Warning ! \nThis action can not be undo</string>
     <string name="yes">Yes</string>
     <string name="submit">Submit Order</string>
     <string name="submit_order">Order Submitted!</string>

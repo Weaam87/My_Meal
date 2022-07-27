@@ -6,12 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mymeal.OrderApplication
 import com.example.mymeal.OrderListAdapter
+import com.example.mymeal.R
+import com.example.mymeal.data.OrderDetails
 import com.example.mymeal.databinding.FragmentOrderListBinding
 import com.example.mymeal.model.OrderViewModel
 import com.example.mymeal.model.OrderViewModelFactory
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 
 class OrderListFragment : Fragment() {
@@ -36,9 +40,11 @@ class OrderListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val adapter = OrderListAdapter {
-            //Add a click handler when click on the item
-            //val action = ItemListFragmentDirections.actionItemListFragmentToItemDetailFragment(it.id)
-            //this.findNavController().navigate(action)
+            MaterialAlertDialogBuilder(requireContext()).
+            setMessage(getString(R.string.delete_order)).setTitle(getString(R.string.can_not_undo))
+                .setCancelable(true)
+                .setNegativeButton(getString(R.string.yes)) { _, _ -> this.sharedViewModel.deleteOrder(it) }
+                .setPositiveButton(getString(R.string.no)) { _, _ ->  }.show()
         }
         binding.recyclerView.adapter = adapter
 
