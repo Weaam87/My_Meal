@@ -70,10 +70,10 @@ class OrderSummary : Fragment() {
 
     //Cancel the order
     private fun cancelOrder() {
-        //Reset the values
-        sharedViewModel.resetOrder()
         //Navigate back to the start fragment
         findNavController().navigate(R.id.action_orderSummary_to_startFragment)
+        //Reset the values
+        sharedViewModel.resetOrder()
     }
 
     fun submitOrder() {
@@ -96,6 +96,8 @@ class OrderSummary : Fragment() {
         if (activity?.packageManager?.resolveActivity(intent, 0) != null) {
             startActivity(intent)
         }
+        findNavController().navigate(R.id.action_orderSummary_to_startFragment)
+        sharedViewModel.resetOrder()
     }
 
     private fun doNothing() {

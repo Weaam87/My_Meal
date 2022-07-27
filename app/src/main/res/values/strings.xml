@@ -22,12 +22,11 @@
     <string name="subtotal">Subtotal : %s</string>
     <string name="tax">Tax Rate : 0.06 = %s</string>
     <string name="total">Total : %s</string>
-    <string name="cancel_order">Cancel order ?</string>
-    <string name="delete_order">Delete order ?</string>
-    <string name="can_not_undo">Warning ! \nThis action can not be undo</string>
+    <string name="cancel_order">Cancel Order ?</string>
+    <string name="delete_order">Delete This Order ?</string>
+    <string name="can_not_undo">WARNING ! \nThis action can not be undo</string>
     <string name="yes">Yes</string>
     <string name="submit">Submit Order</string>
-    <string name="submit_order">Order Submitted!</string>
     <string name="select_meal">Select your meal</string>
     <string name="select_salad">Select your salad</string>
     <string name="select_drink">Select your drink</string>
