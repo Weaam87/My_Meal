@@ -45,11 +45,18 @@ class OrderListFragment : Fragment() {
                 .setPositiveButton(getString(R.string.no)) { _, _ ->  }.show()
         }
         binding.recyclerView.adapter = adapter
+        val noOrderYet = binding.noOrderYet
 
         // Attach an observer on the allOrders to listen for the data changes.
         // This will update the RecyclerView with the new items on the list.
-        sharedViewModel.allOrders.observe(this.viewLifecycleOwner) {
-            orders -> orders.let { adapter.submitList(it) }
+        sharedViewModel.allOrders.observe(this.viewLifecycleOwner) { orders ->
+            // If order list is empty , display the text
+            if (orders.isEmpty()) {
+                noOrderYet.visibility = View.VISIBLE
+            } else {
+                noOrderYet.visibility = View.GONE
+            }
+            orders.let { adapter.submitList(it) }
         }
 
         binding.recyclerView.layoutManager = LinearLayoutManager(this.context)
